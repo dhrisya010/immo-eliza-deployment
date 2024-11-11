@@ -25,7 +25,10 @@ def predict_price(input_data):
     
 # Example input data for a new house
 input_data = {
+                'property_type':'HOUSE',
+                'region':'Flanders',
                 'construction_year': 2010,
+                'zip_code':'2100',
                  'nbr_bedrooms': 2,  
                  'total_area_sqm': 750,
                 'terrace_sqm': 20  

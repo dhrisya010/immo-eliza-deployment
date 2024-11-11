@@ -1,17 +1,20 @@
-# Step 1: Use an official Python image as a base
+# Use an official Python image as a base
 FROM python:3.9-slim
 
-# Step 2: Set the working directory inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Step 3: Copy the application code into the container
-COPY . /app
+# Copy requirements.txt from the parent directory into the container
+COPY ../requirements.txt /app/requirements.txt
 
-# Step 4: Install dependencies
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Step 5: Expose the port on which the FastAPI app will run
+# Copy all files in the api directory into the container
+COPY . /app
+
+# Expose port 8000
 EXPOSE 8000
 
-# Step 6: Run the FastAPI application using Uvicorn
+# Run the FastAPI app with Uvicorn
 CMD ["uvicorn", "main:immoapp", "--host", "0.0.0.0", "--port", "8000"]

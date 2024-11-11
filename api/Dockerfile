@@ -4,14 +4,11 @@ FROM python:3.9-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy requirements.txt from the parent directory into the container
-COPY ../requirements.txt /app/requirements.txt
+# Copy all contents from the api directory into /app in the container
+COPY . /app
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy all files in the api directory into the container
-COPY . /app
+RUN pip install --no-cache-dir -r api/requirements.txt
 
 # Expose port 8000
 EXPOSE 8000

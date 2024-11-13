@@ -19,16 +19,16 @@ class ImmowebPricePrediction(BaseModel):
     nbr_bedrooms: int
 
     # Optional fields
-    equipped_kitchen: Optional[dict] = None
+    equipped_kitchen: Optional[str]
     fl_furnished: Optional[bool] = None
     fl_open_fire: Optional[bool] = None
-    terrace_sqm: Optional[int] = None
-    garden_sqm: Optional[int] = None
+    terrace_sqm: Optional[float] = None
+    garden_sqm: Optional[float] = None
     fl_swimming_pool: Optional[bool] = None
     fl_floodzone: Optional[bool] = None
-    state_building: Optional[dict] = None
+    state_building: Optional[str] 
     primary_energy_consumption_sqm: Optional[int] = None
-    heating_type: Optional[dict] = None
+    heating_type: Optional[str]
     fl_double_glazing: Optional[bool] = None
 
 
@@ -69,6 +69,7 @@ async def predict(data: ImmowebPricePrediction):
 
     # Make prediction
     prediction = model.predict(processed_data)
+    #prediction = model.predict(data)
 
     # Return the prediction result
     return {"predicted_price": prediction[0]}

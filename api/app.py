@@ -69,7 +69,6 @@ async def predict(data: ImmowebPricePrediction):
 
     # Make prediction
     prediction = model.predict(processed_data)
-    #prediction = model.predict(data)
 
     # Return the prediction result
     return {"predicted_price": prediction[0]}

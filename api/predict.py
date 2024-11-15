@@ -1,6 +1,6 @@
 import pickle
 import numpy as np
-from train import testing_data
+
 import pandas as pd
 
 
@@ -33,6 +33,23 @@ input_data = {
                  'total_area_sqm': 750,
                 'terrace_sqm': 20  
              }
+
+
+'''
+{
+    "property_type": "HOUSE",
+    "region": "Flanders",
+    "construction_year": 2010,
+    "zip_code": "2100",
+    "nbr_bedrooms": 2,
+    "total_area_sqm": 750,
+    "terrace_sqm": 20
+}
+
+
+
+
+'''
     
     # Predict the price
 predicted_price = predict_price(input_data)

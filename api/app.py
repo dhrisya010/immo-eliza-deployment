@@ -20,14 +20,14 @@ class ImmowebPricePrediction(BaseModel):
 
     # Optional fields
     equipped_kitchen: Optional[Literal["INSTALLED", "HYPER_EQUIPPED", "NOT_INSTALLED","USA_UNINSTALLED","USA_HYPER_EQUIPPED","SEMI_EQUIPPED","USA_INSTALLED","USA_SEMI_EQUIPPED"]] = None
-    #fl_furnished: Optional[bool] = None
+    fl_furnished: Optional[bool] = None
     terrace_sqm: Optional[float] = None
     garden_sqm: Optional[float] = None
-    #fl_swimming_pool: Optional[bool] = None
+    fl_swimming_pool: Optional[bool] = None
     state_building: Optional[Literal["AS_NEW", "GOOD", "JUST_RENOVATED","TO_BE_DONE_UP","TO_RENOVATE","TO_RESTORE"]] =None
     primary_energy_consumption_sqm: Optional[int] = None
     heating_type: Optional[Literal["CARBON", "ELECTRIC", "FUELOIL","GAS","PELLET","SOLAR","WOOD"]] = None
-    #fl_double_glazing: Optional[bool] = None
+    fl_double_glazing: Optional[bool] = None
 
 
 def preprocess_input(data: ImmowebPricePrediction):
